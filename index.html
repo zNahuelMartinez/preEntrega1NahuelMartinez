@@ -1,14 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="main.js">
-    <title>Calculadora</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora de promedios</title>
 </head>
 <body>
-    <!-- <script src="./primerPreEntrega.js"></script> -->
-    <script src="./segundaPreEntrega.js"></script>
+    <div class="d-flex my-4 mx-4 justify-content-center">
+        <div class="card shadow col-lg-4 p-4 center">
+            <div class="pt-4 mb-4 d-flex justify-content-center align-items-center">
+                <h4>Calculadora de promedios</h4>
+            </div>
+            <form id="formulario">
+                <div class="mb-4 d-flex justify-content-center"> 
+                    <div class="d-flex flex-column align-items-center">
+                        <label for="nombre">Nombre del alumno</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="ej: Nahuel" required>
+                    </div>
+                </div>
+                <div class="mb-4 d-flex justify-content-center">
+                    <div>
+                        <label for="notaTrimestre">Nota 1er Trimestre</label>
+                        <input type="number" class="form-control" name="tri1" id="tri1" min="0" max="10" placeholder="ej:9" required>
+                    </div>
+                </div> 
+                <div class="mb-4 d-flex justify-content-center">
+                    <div>
+                        <label for="notaTrimestre">Nota 2do Trimestre</label>
+                        <input type="number" class="form-control" name="tri2" id="tri2" min="0" max="10" placeholder="ej:2" required>
+                    </div>
+                </div>
+                <div class="mb-4 d-flex justify-content-center">
+                    <div>
+                        <label for="notaTrimestre">Nota 3er Trimestre</label>
+                        <input type="number" class="form-control" name="tri3" id="tri3" min="0" max="10" placeholder="ej:5" required>
+                    </div>
+                </div> 
+                <div id="mensaje-error" class="errorDato"></div>
+                <div class="mb-2 d-flex justify-content-center">
+                    <button id ="agregar" class="col-4 btn btn-success mb-4">
+                        <span>Calcular promedio</span>
+                    </button>
+                </div>    
+                <div class="mb-4 d-flex justify-content-center align-items-center">
+                    <h4>Alumnos Registrados:</h4>
+                </div>
+                <ul id="lista-alumnos" class="listaAlumn"></ul>
+                <div class="mb-2 d-flex justify-content-center">
+                    <button type="button" id="reset" class="resetB btn btn-danger">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <script src="terceraPreEntrega.js"></script>
 </body>
 </html>

@@ -36,8 +36,7 @@ class Alumno {
     promedio = promedioAux / 3;
  
   //        // Verificar si los datos ingresados son válidos
-    if (
-      isNaN(tri1 && tri2 && tri3) || tri1 === "" || tri2 === "" || tri3 === "" || nombre === "" || !isNaN(nombre) ) {
+    if (isNaN(tri1 && tri2 && tri3) || tri1 === "" || tri2 === "" || tri3 === "" || nombre === "" || !isNaN(nombre) ) {
       alert("Uno de los datos ingresados no es válido. En nombre solo letras y en trimestre solo números.");
       i = i - 1;
     } else {
@@ -55,11 +54,21 @@ class Alumno {
   const filtroAprobados = (alum) => alum.promedio >= 7;
   const alumnosAprobados = Alumnos.filter(filtroAprobados);
   
-  console.log("Todas los alumnos: \n");
-  console.log(Alumnos);
-  
   console.log("Alumnos aprobados: \n");
   for (const aprobados of alumnosAprobados) {
-    console.log(alert(`El alumno: ${aprobados.nombre} tiene un promedio de: ${aprobados.promedio}`));
+    console.log(alert(`El alumno: ${aprobados.nombre} tiene un promedio de: ${aprobados.promedio} y esta aprobado`));
   }
+
+  //         // Función para alumnos desaprobados
+  const filtroDesaprobados = (alum) => alum.promedio <= 7;
+  const alumnosDesaprobados = Alumnos.filter(filtroDesaprobados);
+    
+  console.log("Alumnos desaprobados: \n");
+  for (const desaprobados of alumnosDesaprobados) {
+    console.log(alert(`El alumno: ${desaprobados.nombre} tiene un promedio de: ${desaprobados.promedio} y esta desaprobado`));
+  }
+
+  console.log("Todos los alumnos: \n");
+  console.log(Alumnos);
   
+
