@@ -11,9 +11,9 @@ body{
     background: rgb(32, 32, 32);
 }
 
-.resetB{
+/* .resetB{
     display: none;
-}
+} */
 
 .errorDato{
     color: red;
@@ -25,4 +25,21 @@ body{
     text-align: center;
     padding: 5px;
     list-style: none;
+}
+
+.green{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+}
+
+.red{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+p{
+    margin: 0;
+    padding-left: 3px;
 }

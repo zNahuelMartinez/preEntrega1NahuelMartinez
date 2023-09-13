@@ -71,8 +71,8 @@ function actualizarLista() {
 document.getElementById('agregar').addEventListener('click', () => {
   //(código existente para agregar alumnos)
 
-  actualizarLista();
   mostrarResetButton(); // Mostrar el botón de reset
+  actualizarLista();
 });
 
 // Función para mostrar u ocultar el botón de reset
