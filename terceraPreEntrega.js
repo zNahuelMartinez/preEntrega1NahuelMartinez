@@ -15,7 +15,7 @@ function mostrarError(mensaje) {
   mensajeError.textContent = mensaje;
 }
 
-// Cargar datos de LocalStorage al inicio, si existen
+// Cargar datos de localstorage al inicio, si existen
 function cargarDatosDesdeLocalStorage() {
   const datosAlumnos = localStorage.getItem('alumnos');
   if (datosAlumnos) {
@@ -24,7 +24,7 @@ function cargarDatosDesdeLocalStorage() {
   }
 }
 
-// Función para guardar datos en LocalStorage
+// Función para guardar datos en localstorage
 function guardarDatosEnLocalStorage() {
   localStorage.setItem('alumnos', JSON.stringify(Alumnos));
 }
@@ -41,12 +41,12 @@ document.getElementById('agregar').addEventListener('click', () => {
     mostrarError('Por favor, ingrese datos válidos.');
     return;
   } else {
-    document.getElementById('mensaje-error').textContent = ''; // borra el mensaje de error si no hay errores.
+    document.getElementById('mensaje-error').textContent = ''; // borra el mensaje de error si no hay errores
   }
 
   const alum = new Alumno(nombre, tri1, tri2, tri3, promedio);
   Alumnos.push(alum);
-  guardarDatosEnLocalStorage(); // Guardar datos en LocalStorage
+  guardarDatosEnLocalStorage(); // Guardar datos en localstorage
   
   actualizarLista();
 });
@@ -60,22 +60,21 @@ function actualizarLista() {
     const promedioRedondeado = alumno.promedio.toFixed(1);
     li.textContent = `Nombre: ${alumno.nombre}, Promedio: ${promedioRedondeado}`;
     if (alumno.promedio >= 6) {
-      li.style.color = 'green'; // Alumnos aprobados en verde
+      li.style.color = 'green'; // Aprobados en verde
     } else {
-      li.style.color = 'red'; // Alumnos desaprobados en rojo
+      li.style.color = 'red'; // Desaprobados en rojo
     }
     listaAlumnos.appendChild(li);
   });
 }
 
 document.getElementById('agregar').addEventListener('click', () => {
-  //(código existente para agregar alumnos)
 
   mostrarResetButton(); // Mostrar el botón de reset
   actualizarLista();
 });
 
-// Función para mostrar u ocultar el botón de reset
+// Mostrar/ocultar el botón de reset
 function mostrarResetButton() {
   const resetButton = document.getElementById('reset');
   resetButton.style.display = Alumnos.length > 0 ?  'block' : 'none' ;
@@ -83,10 +82,10 @@ function mostrarResetButton() {
 
 document.getElementById('reset').addEventListener('click', () => {
   Alumnos.length = 0; // Borrar la lista de alumnos
-  guardarDatosEnLocalStorage(); // Actualizar LocalStorage
+  guardarDatosEnLocalStorage(); // Actualizar storage
   actualizarLista();
-  mostrarResetButton(); // Ocultar el botón de reset
+  mostrarResetButton(); // Ocultar el boton de reset
 });
 
-// Cargar datos desde LocalStorage al inicio
+// Cargar datos desde localstorage al inicio
 cargarDatosDesdeLocalStorage();
