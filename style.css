@@ -11,10 +11,6 @@ body{
     background: rgb(32, 32, 32);
 }
 
-/* .resetB{
-    display: none;
-} */
-
 .errorDato{
     color: red;
     text-align: center;
